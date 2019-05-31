@@ -36,7 +36,8 @@ int main (){
         int opcion =0;
         cin >>opcion;
         switch (opcion){
-        case 1:// agregar{
+        case 1:// agregar
+        {
             cout << "bienvenido a al sistema de de agregado de personas"<< endl;
             cout<< "que desea agregar?"<<endl;
             cout << "1) maestro aire "<< endl;
@@ -145,13 +146,12 @@ int main (){
                             aire.push_back(air);
                             termino=true;
                         }break;
-                        default:
+                        default:{
                         cout << "ingreso un valor no valido"<< endl;
-                        break;
+                        }break;
                         }//fin switch del poder
                     }//fin while de creacion     
-                }
-                break;
+                }break;
                 case 2:{//tierrra
                     cout << "ingrese el nombre: "<<endl;
                     cin>> nombre;
@@ -417,8 +417,7 @@ int main (){
                 }break;
             default:{
                 cout << "opcion invalida, regresara al menu"<< endl;
-            }
-                break;
+            }break;
             }//fin switch de creacion
         case 2://listar
         {
