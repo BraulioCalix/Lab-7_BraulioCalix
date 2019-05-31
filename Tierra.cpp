@@ -7,7 +7,7 @@ Tierra::Tierra(){
     coles="";
     graduacion=0;
 }
-Tierra::Tierra(string col,int gra, Poder pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
+Tierra::Tierra(string col,int gra, Poder* pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
     
     coles=col;
     graduacion=gra;
@@ -21,6 +21,6 @@ string Tierra::toString(){
     retorno+= " Graduacion: ";
     retorno += graduacion;
     retorno+= "poder: ";
-    retorno += poder.toString(); 
+    retorno += poder->toString(); 
     return retorno ;
 }

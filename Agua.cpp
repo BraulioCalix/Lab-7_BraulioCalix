@@ -9,7 +9,7 @@ Agua::Agua(){
     
     
 }
-Agua::Agua(string trib,string arm, Poder pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
+Agua::Agua(string trib,string arm, Poder* pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
     
     tribu=trib;
     arma=arm;
@@ -23,6 +23,6 @@ string Agua::toString(){
     retorno+= " arma: ";
     retorno += arma;
     retorno+= "poder: ";
-    retorno += poder.toString(); 
+    retorno += poder->toString(); 
     return retorno ;
 }

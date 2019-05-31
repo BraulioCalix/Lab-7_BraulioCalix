@@ -39,15 +39,15 @@ int main (){
         case 1:// agregar{
             cout << "bienvenido a al sistema de de agregado de personas"<< endl;
             cout<< "que desea agregar?"<<endl;
-            cout << "1) maestro agua "<< endl;
+            cout << "1) maestro aire "<< endl;
             cout << "2) maestro tierra "<< endl;
-            cout << "3) maestro aire "<< endl;
+            cout << "3) maestro agua "<< endl;
             cout << "4) maestro fuego "<< endl;
             cout << "5) persona normal "<< endl;
             int tipo=0;
             cin >> tipo;
             switch (tipo){
-            case 1:{// agua
+            case 1:{// aire
                     cout << "ingrese el nombre: "<<endl;
                     cin>> nombre;
                     cout << "ingrese la nacion: "<< endl;
@@ -55,6 +55,7 @@ int main (){
                     cout << "ingrese la edad"<< endl;
                     cin >> edad;
                     cout << "ingrese el sexo "<< endl;
+                    cin >> sexo;
                     cout << "ingrese la cantidad de pelo del maestro: "<<endl;
                     string pelo="";
                     cin >> pelo;
@@ -85,6 +86,7 @@ int main (){
                             Poder* poder = new Ofencivo(rango,fuerza,nom , nivel ); 
                             Aire* air = new Aire (pelo,color,poder,nacion,nombre,edad,sexo);
                             aire.push_back(air);
+                            termino=true;
                         }break;
                         case 2:{
                             cout << "ingrese el nombre del poder: "<< endl;
@@ -99,7 +101,7 @@ int main (){
                             Poder* poder = new Curativo(tipo ,nom,nivel);
                             Aire* air = new Aire (pelo,color,poder,nacion,nombre,edad,sexo);
                             aire.push_back(air);
-
+                            termino=true;
                         }break;
                         case 3:{//defen
                             cout << "ingrese el nombre del poder: "<< endl;
@@ -117,6 +119,7 @@ int main (){
                             Poder* poder = new Defencivo(resis,dura,nom,nivel);
                             Aire* air = new Aire (pelo,color,poder,nacion,nombre,edad,sexo);
                             aire.push_back(air);
+                            termino=true;
                         }break;
                         case 4:{//invo
                             cout << "ingrese el nombre del poder: "<< endl;
@@ -140,19 +143,13 @@ int main (){
                             Poder* poder = new Invocacion(tip,especie,nomin,habi,nom,nivel);
                             Aire* air = new Aire (pelo,color,poder,nacion,nombre,edad,sexo);
                             aire.push_back(air);
-
-
+                            termino=true;
                         }break;
                         default:
                         cout << "ingreso un valor no valido"<< endl;
                         break;
                         }//fin switch del poder
-                    }//fin while de creacion
-                    
-                    
-
-
-
+                    }//fin while de creacion     
                 }
                 break;
                 case 2:{//tierrra
@@ -163,9 +160,138 @@ int main (){
                     cout << "ingrese la edad"<< endl;
                     cin >> edad;
                     cout << "ingrese el sexo "<< endl;
+                    cin >> sexo;
+                    cout << "ingrese el numero de coles cosechadas: "<< endl;
+                    string col="";
+                    cin >>col;
+                    bool grad=false;
+                    
+                    bool termino=false;
+                    while (termino==false){
+                        cout << "ingrese el tipo de poder del maestro: "<<endl;
+                        cout << "1)ofensivo 2)curativo 3) defensivo 4) invocacion  :"<< endl;
+                        int poder=0;
+                        cin >> poder;
+                        switch (poder){// switch poder
+                        case 1:{ 
+                            int gradua=0;   
+                            while (grad==false){
+                                cout << "ingrese la graduacion entre 0< 20: "<< endl;
+                                
+                                cin>> gradua;
+                                if(gradua > 0 && gradua < 21){
+                                    grad=true;
+                                }
+                            }    
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel; 
+                            cout << "ingrese el rango del poder: "<< endl;
+                            string rango="";
+                            cin >> rango;
+                            cout << "ingrese la fuerza del poder"<< endl;
+                            string fuerza="";
+                            cin>> fuerza;
+                            Poder* poder = new Ofencivo(rango,fuerza,nom , nivel ); 
+                            Tierra* tier = new  Tierra(col,gradua,poder,nacion,nombre,edad,sexo);
+                            tierra.push_back(tier);
+                            termino=true;
+                        }break;
+                        case 2:{
+                            int gradua=0;   
+                            while (grad==false){
+                                cout << "ingrese la graduacion entre 0< 20: "<< endl;
+                                
+                                cin>> gradua;
+                                if(gradua > 0 && gradua < 21){
+                                    grad=true;
+                                }
+                            }  
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese eltipo del poder: "<< endl;
+                            string tipo= "";
+                            cin >> tipo;
+                            Poder* poder = new Curativo(tipo ,nom,nivel);
+                            Tierra* tier = new Tierra (col,gradua,poder,nacion,nombre,edad,sexo);
+                            tierra.push_back(tier);
+                            termino=true;
+                        }break;
+                        case 3:{//defen
+                                int gradua=0;   
+                                while (grad==false){
+                                cout << "ingrese la graduacion entre 0< 20: "<< endl;
+                                
+                                cin>> gradua;
+                                    if(gradua > 0 && gradua < 21){
+                                        grad=true;
+                                    }
+                                }  
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese la resistenia del poder: " <<endl;
+                            string resis="";
+                            cin>> resis;
+                            cout << "ingrese la duracion del poder: "<< endl;
+                            string dura="";
+                            cin >> dura;
+                            Poder* poder = new Defencivo(resis,dura,nom,nivel);
+                            Tierra* tier = new Tierra (col,gradua,poder,nacion,nombre,edad,sexo);
+                            tierra.push_back(tier);
+                            termino=true;
+                        }break;
+                        case 4:{//invo
+                            int gradua=0;   
+                            while (grad==false){
+                                cout << "ingrese la graduacion entre 0< 20: "<< endl;    
+                                cin>> gradua;
+                                if(gradua > 0 && gradua < 21){
+                                    grad=true;
+                                }
+                            }  
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese el nombre de la invocacion: "<< endl;
+                            string nomin="";
+                            cin >>nomin;
+                            cout << "ingrese la especie de la invocacion: "<< endl;
+                            string especie="";
+                            cin >> especie;
+                            cout<< "ingrese la habilidad de la invocacion: "<< endl;
+                            string habi="";
+                            cin >> habi;
+                            cout << "ingrese el tipo de invocacion: "<< endl;
+                            string tip ="";
+                            cin >>tip;
+                            Poder* poder = new Invocacion(tip,especie,nomin,habi,nom,nivel);
+                            Tierra* tier = new Tierra (col,gradua,poder,nacion,nombre,edad,sexo);
+                            tierra.push_back(tier);
+                            termino=true;
+                        }break;
+                        default:
+                        cout << "ingreso un valor no valido"<< endl;
+                        break;
+                        }//fin switch del poder
+                    }//fin while de creacion     
 
+                     
                 }break;
-                case 3:{//aire
+                case 3:{//agua
                     cout << "ingrese el nombre: "<<endl;
                     cin>> nombre;
                     cout << "ingrese la nacion: "<< endl;
@@ -173,6 +299,101 @@ int main (){
                     cout << "ingrese la edad"<< endl;
                     cin >> edad;
                     cout << "ingrese el sexo "<< endl;
+                    cin >> sexo;
+                    cout <<"ingrese la tribu"<< endl;
+                    string tribu="";
+                    cin >>tribu ;
+                    string arma="";
+                    cout << "ingrese el arma favorita"<< endl;
+                    cin >> arma;
+                    bool termino=false;
+                    while (termino==false){
+                        cout << "ingrese el tipo de poder del maestro: "<<endl;
+                        cout << "1)ofensivo 2)curativo 3) defensivo 4) invocacion  :"<< endl;
+                        int poder=0;
+                        cin >> poder;
+                        switch (poder){// switch poder
+                        case 1:{        
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel; 
+                            cout << "ingrese el rango del poder: "<< endl;
+                            string rango="";
+                            cin >> rango;
+                            cout << "ingrese la fuerza del poder"<< endl;
+                            string fuerza="";
+                            cin>> fuerza;
+                            Poder* poder = new Ofencivo(rango,fuerza,nom , nivel ); 
+                            Agua* agu = new Agua (tribu,arma,poder,nacion,nombre,edad,sexo);
+                            agua.push_back(agu);
+                            termino=true;
+                        }break;
+                        case 2:{
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese eltipo del poder: "<< endl;
+                            string tipo= "";
+                            cin >> tipo;
+                            Poder* poder = new Curativo(tipo ,nom,nivel);
+                            Agua* agu = new Agua (tribu,arma,poder,nacion,nombre,edad,sexo);
+                            agua.push_back(agu);
+                            termino=true;
+                        }break;
+                        case 3:{//defen
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese la resistenia del poder: " <<endl;
+                            string resis="";
+                            cin>> resis;
+                            cout << "ingrese la duracion del poder: "<< endl;
+                            string dura="";
+                            cin >> dura;
+                            Poder* poder = new Defencivo(resis,dura,nom,nivel);
+                            Agua* agu = new Agua (tribu,arma,poder,nacion,nombre,edad,sexo);
+                            agua.push_back(agu);
+                            termino=true;
+                        }break;
+                        case 4:{//invo
+                            cout << "ingrese el nombre del poder: "<< endl;
+                            string nom="";
+                            cin >> nom;
+                            cout << "ingrese el nivel del poder: "<< endl;
+                            string nivel="";
+                            cin>>nivel;
+                            cout << "ingrese el nombre de la invocacion: "<< endl;
+                            string nomin="";
+                            cin >>nomin;
+                            cout << "ingrese la especie de la invocacion: "<< endl;
+                            string especie="";
+                            cin >> especie;
+                            cout<< "ingrese la habilidad de la invocacion: "<< endl;
+                            string habi="";
+                            cin >> habi;
+                            cout << "ingrese el tipo de invocacion: "<< endl;
+                            string tip ="";
+                            cin >>tip;
+                            Poder* poder = new Invocacion(tip,especie,nomin,habi,nom,nivel);
+                            Agua* agu = new Agua (tribu,arma,poder,nacion,nombre,edad,sexo);
+                            agua.push_back(agu);
+                            termino=true;
+                        }break;
+                        default:
+                        cout << "ingreso un valor no valido"<< endl;
+                        break;
+                        }//fin switch del poder
+                    }//fin while de creacion  
+
 
                 }break;
                 case 4:{//fuego

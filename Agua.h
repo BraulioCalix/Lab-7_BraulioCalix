@@ -7,10 +7,10 @@ class Agua:public Persona{
 	private:
 		string tribu;
         string arma;
-        Poder poder;
+        Poder* poder;
 	public:
 		Agua();
-	    Agua(string, string ,Poder,string,string,string,string);
+	    Agua(string, string ,Poder*,string,string,string,string);
         string toString();
 };
 	      

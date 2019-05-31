@@ -7,10 +7,10 @@ class Fuego:public Persona{
 	private:
 		string cica;
         string victorias;
-        Poder poder;
+        Poder* poder;
 	public:
 		Fuego();
-	    Fuego(string, string ,Poder,string,string,string,string);
+	    Fuego(string, string ,Poder*,string,string,string,string);
         string toString();
 };
 	      

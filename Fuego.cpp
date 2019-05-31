@@ -9,7 +9,7 @@ Fuego::Fuego(){
     
     
 }
-Fuego::Fuego(string cic,string vic, Poder pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
+Fuego::Fuego(string cic,string vic, Poder* pode ,string nacio,string nombr, string eda,string sex):Persona(nacio,nombr,eda,sex){
     
     cica=cic;
     victorias=vic;
@@ -23,6 +23,6 @@ string Fuego::toString(){
     retorno+= " Victorias en pai sho: ";
     retorno += victorias;
     retorno+= "poder: ";
-    retorno += poder.toString(); 
+    retorno += poder->toString(); 
     return retorno ;
 }
