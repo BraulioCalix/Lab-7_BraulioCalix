@@ -11,7 +11,7 @@ Invocacion::Invocacion(){
 
     
 }
-Invocacion::Invocacion(string tip,string espe,string nomb,string habi){
+Invocacion::Invocacion(string tip,string espe,string nomb,string habi,string nombre,string nivel):Poder(nombre ,nivel){
     tipo=tip;
     nombre=nomb;
     especie=espe;

@@ -8,10 +8,8 @@ class Ofencivo:public Poder{
         string fuerza;
     public:
         Ofencivo();
-        Ofencivo(string ,string);
-        //virtual double getArea();
-        string getRango();
-        string getFuerza();
+        Ofencivo(string ,string,string,string);
+        
         string toString();
         
 };

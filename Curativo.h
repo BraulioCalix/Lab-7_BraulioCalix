@@ -8,7 +8,7 @@ class Curativo:public Poder{
         
     public:
         Curativo();
-        Curativo(string);
+        Curativo(string,string,string);
         //virtual double getArea();
         
         string toString();

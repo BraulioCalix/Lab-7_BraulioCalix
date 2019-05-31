@@ -10,7 +10,7 @@ class Invocacion:public Poder{
         string tipo;
     public:
         Invocacion();
-        Invocacion(string,string ,string,string);
+        Invocacion(string,string ,string,string,string,string);
         string toString();
         
 };

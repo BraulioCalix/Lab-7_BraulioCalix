@@ -1,9 +1,5 @@
 #include "Poder.h"
-
-string Poder::getNombre(){
-	return nombre;
-}
-
-int Poder::getNivel(){
-	return nivel;
+Poder::Poder(string nombr,string fuerz){
+	nombre=nombr;
+	nivel= fuerz;
 }

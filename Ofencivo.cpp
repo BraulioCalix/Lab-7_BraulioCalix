@@ -7,7 +7,7 @@ Ofencivo::Ofencivo(){
     rango="";
     fuerza="";
 }
-Ofencivo::Ofencivo(string rang,string fuerz){
+Ofencivo::Ofencivo(string rang,string fuerz,string nombre,string nivel):Poder(nombre, nivel){
     rango=rang;
     fuerza=fuerz;
     

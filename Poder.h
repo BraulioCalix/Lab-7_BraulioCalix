@@ -5,10 +5,10 @@ using std::string;
 class Poder{
 	private: 
 		string nombre;
-		int nivel;
+		string nivel;
 	public:
-		string getNombre();
-		int getNivel();
+	Poder();
+		Poder (string ,string);
 		virtual string toString();
 };
 #endif

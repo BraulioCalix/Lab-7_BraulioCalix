@@ -7,7 +7,7 @@ Defencivo::Defencivo(){
     resistencia="";
     duracion="";
 }
-Defencivo::Defencivo(string resis,string dura){
+Defencivo::Defencivo(string resis,string dura,string nombre,string nivel):Poder(nombre, nivel){
     resistencia=resis;
     duracion=dura;
     

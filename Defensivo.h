@@ -8,7 +8,7 @@ class Defencivo:public Poder{
         string duracion;
     public:
         Defencivo();
-        Defencivo(string ,string);
+        Defencivo(string ,string,string,string);
         //virtual double getArea();
         
         string toString();
