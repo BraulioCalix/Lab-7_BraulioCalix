@@ -1,4 +1,9 @@
 #include "Persona.h"
+#include "Fuego.h"
+#include "Agua.h"
+#include "Tierra.h"
+#include "Aire.h"
+#include "Normales.h"
 #include <iostream>
 using namespace std;
 Persona::Persona(){
